@@ -9,5 +9,5 @@ import { Component } from "@angular/core";
     `
 })
 export class AppComponent {
-    pageTitle: string = 'Acme Produkt Management by JS';
+    pageTitle: string = 'Acme Produkt Management by JS with IntelliJ';
  }
