@@ -1,7 +1,5 @@
 import { Component } from "@angular/core";
 
-import { ProductService } from './products/product.service'
-
 @Component({
     selector: 'pm-app',
     template: `
@@ -19,9 +17,8 @@ import { ProductService } from './products/product.service'
                 <router-outlet></router-outlet>
             </div>
         </div>
-    `,
-    providers: [ProductService]
+    `
 })
 export class AppComponent {
-    pageTitle: string = 'Acme Produkt Management by JS with IntelliJ and Visual Studio Code';
+    pageTitle: string = 'Acme Produkt Management by JS';
  }
