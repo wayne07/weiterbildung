@@ -1049,7 +1049,7 @@ UrlMatcher.prototype.format = function (values) {
  * information on registering custom types.
  *
  * @param {Object} config  A configuration object which contains the custom type definition.  The object's
- *        properties will override the default methods and/or pattern in `Type`'s public interface.
+ *        properties will override the default methods and/or pattern in `Type`'s public-angular interface.
  * @example
  * <pre>
  * {

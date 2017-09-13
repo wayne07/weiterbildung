@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1")
+//@RequestMapping("api/v1")
 public class ShipwreckController {
 
     @Autowired
@@ -17,31 +17,38 @@ public class ShipwreckController {
 
     @RequestMapping(value = "shipwrecks", method = RequestMethod.GET)
     public List<Shipwreck> list() {
-        return shipwreckRepository.findAll();
+        return populateShipwrecks();
     }
 
-    @RequestMapping(value = "shipwrecks", method = RequestMethod.POST)
-    public Shipwreck create(@RequestBody Shipwreck wreck) {
-        return shipwreckRepository.saveAndFlush(wreck);
+
+    @ModelAttribute("allShipwrecks")
+    public List<Shipwreck> populateShipwrecks() {
+        return this.shipwreckRepository.findAll();
     }
 
-    @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.GET)
-    public Shipwreck get(@PathVariable Long id) {
-        return shipwreckRepository.findOne(id);
-    }
 
-    @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.PUT)
-    public Shipwreck update(@PathVariable Long id, @RequestBody Shipwreck wreck) {
-        Shipwreck existingShipwreck = shipwreckRepository.findOne(id);
-        BeanUtils.copyProperties(wreck, existingShipwreck);
-        return shipwreckRepository.saveAndFlush(existingShipwreck);
-    }
-
-    @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.DELETE)
-    public Shipwreck delete(@PathVariable Long id) {
-        Shipwreck existingShipwreck = shipwreckRepository.findOne(id);
-        shipwreckRepository.delete(existingShipwreck);
-        return existingShipwreck;
-    }
+//    @RequestMapping(value = "shipwrecks", method = RequestMethod.POST)
+//    public Shipwreck create(@RequestBody Shipwreck wreck) {
+//        return shipwreckRepository.saveAndFlush(wreck);
+//    }
+//
+//    @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.GET)
+//    public Shipwreck get(@PathVariable Long id) {
+//        return shipwreckRepository.findOne(id);
+//    }
+//
+//    @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.PUT)
+//    public Shipwreck update(@PathVariable Long id, @RequestBody Shipwreck wreck) {
+//        Shipwreck existingShipwreck = shipwreckRepository.findOne(id);
+//        BeanUtils.copyProperties(wreck, existingShipwreck);
+//        return shipwreckRepository.saveAndFlush(existingShipwreck);
+//    }
+//
+//    @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.DELETE)
+//    public Shipwreck delete(@PathVariable Long id) {
+//        Shipwreck existingShipwreck = shipwreckRepository.findOne(id);
+//        shipwreckRepository.delete(existingShipwreck);
+//        return existingShipwreck;
+//    }
 
 }
