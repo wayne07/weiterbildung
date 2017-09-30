@@ -2,8 +2,8 @@
 body {
     padding-top: 70px;
     padding-bottom: 70px; /*for navbar-fixed-bottom*/
-    overflow: hidden
-
+    overflow: hidden;
+    background-color: lightcyan;
 }
 
 /* Correct left margin */
