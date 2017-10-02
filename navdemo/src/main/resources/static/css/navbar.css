@@ -10,6 +10,16 @@ body {
 .navbar-header{
     padding-left: 15px;
     background-color: yellow;
+    /*color: #FF0000;*/
+}
+
+/*.navbar-header:not(.collapsed),*/
+.navbar-header.collapsed,
+.navbar-header:focus,
+.navbar-header:hover{
+    background-color: darkblue;
+    /*border-color: #FF0000;*/
+    /*border-style: dashed;*/
 }
 
 .navbar .navbar-toggle {
